@@ -4,6 +4,7 @@ defined("APPPATH") OR die("Access denied");
 
 use \Core\View,
     \App\Models\User as Users,
+    \App\Models\Portafolio\Portafolio as portafolioModels,
     \Core\Controller;
 
 class Home extends Controller
@@ -11,7 +12,8 @@ class Home extends Controller
 
     public function index()
     {
-        View::set("msg", "Hello World!!");
+        $portafolio = portafolioModels::getAll();
+        View::set("portafolio", $portafolio);
         View::render("home/index");
     }
 

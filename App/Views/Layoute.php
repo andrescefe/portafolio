@@ -64,18 +64,18 @@ class Layoute
                       <hr class="star-primary">
                   </div>
               </div>
+
               <div class="row">
-                  <div class="col-sm-4 portfolio-item">
-                      <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                          <div class="caption">
-                              <div class="caption-content">
-                                  <i class="fa fa-search-plus fa-3x"></i>
-                              </div>
-                          </div>
-                          <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
-                      </a>
-                  </div>
-              </div>
+              <?php
+
+                //instancia de la app
+                $app = new \Core\App;
+
+                //lanzamos la app
+                $app->render();
+
+               ?>
+             </div>
           </div>
       </section>
 
