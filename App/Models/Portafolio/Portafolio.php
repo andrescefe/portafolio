@@ -12,9 +12,6 @@ use \Core\Model;
 class Portafolio implements Crud
 {
 
-  /**
-   * obtiene todos registros de la tabla portafolio
-   */
   public static function getAll(){
     try {
       $connection = Database::instance();
@@ -31,7 +28,7 @@ class Portafolio implements Crud
 
   public static function getById($id)
   {
-
+      
   }
 
   public static function insert($user)

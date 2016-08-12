@@ -12,7 +12,6 @@ class Home extends Controller
 
     public function index()
     {
-        // obtengo todos los registros
         $portafolio = portafolioModels::getAll();
         View::set("portafolio", $portafolio);
         View::render("home/index");
