@@ -185,6 +185,9 @@ class Layoute
 
         <!-- Theme JavaScript -->
         <script src="../App/Views/assets/scripts/freelancer.min.js"></script>
+
+        <script src="../App/Views/assets/scripts/img_lightbox.js"></script>
+
       </body>
       </html>
     <?php
