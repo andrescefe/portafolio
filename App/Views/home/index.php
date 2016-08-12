@@ -1,6 +1,6 @@
 
 
-
+<!-- foreach para mostrar registro por registro en div con efectos boostrap  -->
 <?php foreach ($portafolio as $key => $value): ?>
 
         <div class="col-sm-4 portfolio-item">
