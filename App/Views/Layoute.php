@@ -33,10 +33,16 @@ class Layoute
           <!-- Theme CSS -->
           <link href="../App/Views/assets/css/freelancer.min.css" rel="stylesheet">
 
+          <link href="../App/Views/assets/css/login.form.css" rel="stylesheet">
+
           <!-- Custom Fonts -->
           <link href="../App/Views/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
           <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
           <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+          <!-- css para plugin de imagenes -->
+          <link rel = "stylesheet" href = "../App/Views/assets/css/jquery.fancybox.css?v=2.1.5" type = "text/css" media = "screen" />
+          <link rel = "stylesheet" href = "../App/Views/assets/css/jquery.fancybox-buttons.css?v=1.0.5" type = "text/css" media = "screen" />
 
           <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
           <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,119 +58,12 @@ class Layoute
       <?php
         $this->menu();
         $this->header();
-       ?>
-
-       <!--secciones principales  -->
-
-         <section id="portfolio">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12 text-center">
-                      <h2>Portafolio</h2>
-                      <hr class="star-primary">
-                  </div>
-              </div>
-
-              <div class="row">
-              <?php
-
-                //instancia de la app
-                $app = new \Core\App;
-
-                //lanzamos la app
-                $app->render();
-
-               ?>
-             </div>
-          </div>
-      </section>
-
-      <!-- About Section -->
-      <section class="success" id="about">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12 text-center">
-                      <h2>Acerca de mi</h2>
-                      <hr class="star-light">
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-lg-4 col-lg-offset-2">
-                      <p>Desarrollador de app web, con 3 años de experiencia en el campo, apacionado por lo que hago,
-                         ademas del futbol y la investigacion de nuevas tecnologias</p>
-                  </div>
-                  <div class="col-lg-4">
-                      <p>Experiencia en desarrolo de aplicaciones Pos y ERP, ademas de software altamente transaccional, casado y disfrutando de la vida apesar de todo</p>
-                  </div>
-                  <!-- <div class="col-lg-8 col-lg-offset-2 text-center">
-                      <a href="#" class="btn btn-lg btn-outline">
-                          <i class="fa fa-download"></i> Download Theme
-                      </a>
-                  </div> -->
-              </div>
-          </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-12 text-center">
-                      <h2>Contactame</h2>
-                      <hr class="star-primary">
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-lg-8 col-lg-offset-2">
-                      <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                      <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                      <form name="sentMessage" id="contactForm" novalidate>
-                          <div class="row control-group">
-                              <div class="form-group col-xs-12 floating-label-form-group controls">
-                                  <label>Nombre</label>
-                                  <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Please enter your name.">
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                          </div>
-                          <div class="row control-group">
-                              <div class="form-group col-xs-12 floating-label-form-group controls">
-                                  <label>Email</label>
-                                  <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email address.">
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                          </div>
-                          <div class="row control-group">
-                              <div class="form-group col-xs-12 floating-label-form-group controls">
-                                  <label>Numero de Telefono</label>
-                                  <input type="tel" class="form-control" placeholder="Telefono" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                          </div>
-                          <div class="row control-group">
-                              <div class="form-group col-xs-12 floating-label-form-group controls">
-                                  <label>Mensaje</label>
-                                  <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                  <p class="help-block text-danger"></p>
-                              </div>
-                          </div>
-                          <br>
-                          <div id="success"></div>
-                          <div class="row">
-                              <div class="form-group col-xs-12">
-                                  <button type="submit" class="btn btn-success btn-lg">Enviar</button>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </section>
-
-      <?php
-
+        //secciones principales
+        $this->sections();
         $this->footer();
-
        ?>
+
+       <!-- <script tipo = "text / javascript" src = "http://code.jquery.com/jquery-latest.min.js" > </ script> -->
 
         <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
 
@@ -172,10 +71,18 @@ class Layoute
         <!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
 
         <script src="../App/Views/assets/plugins/jquery/jquery.min.js" type="text/javascript"></script>
+        <!-- <script src="../App/Views/assets/plugins/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+        <script src="../App/Views/assets/plugins/jquery/jquery-1.10.1.min.js" type="text/javascript"></script> -->
         <script src="../App/Views/assets/plugins/bootstrap/js/bootstrap.js"></script>
 
         <!-- Plugin JavaScript -->
         <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> -->
+
+        <!-- js para plugin facybox para efectos de imagenes -->
+        <script tipo = "text / javascript" src = "../App/Views/assets/scripts/jquery.mousewheel-3.0.6.pack.js"> </script>
+        <script type = "text/javascript" src = "../App/Views/assets/scripts/jquery.fancybox.pack.js?v=2.1.5"></script>
+        <script type = "text/javascript" src = "../App/Views/assets/scripts/jquery.fancybox-buttons.js?v=1.0.5" ></script>
+        <script type = "text/javascript" src = "../App/Views/assets/scripts/jquery.fancybox-media.js?v=1.0.6" ></script>
 
         <script src="../App/Views/assets/scripts/jquery.easing.min.js"></script>
 
@@ -183,10 +90,28 @@ class Layoute
         <script src="../App/Views/assets/scripts/jqBootstrapValidation.js"></script>
         <script src="../App/Views/assets/scripts/contact_me.js"></script>
 
+        <script src="../App/Views/assets/scripts/login.form.js"></script>
+
         <!-- Theme JavaScript -->
         <script src="../App/Views/assets/scripts/freelancer.min.js"></script>
 
-        <script src="../App/Views/assets/scripts/img_lightbox.js"></script>
+        <!-- script para llamar el efecto en las imagenes -->
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+              $(".fancybox").fancybox({
+                openEffect	: 'elastic',
+                closeEffect	: 'elastic',
+
+                helpers : {
+                  title : {
+                    type : 'float'
+                  }
+                }
+              });
+
+            });
+        </script>
 
       </body>
       </html>
@@ -240,6 +165,9 @@ class Layoute
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contacto</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="login">Iniciar Sesión</a>
                     </li>
                 </ul>
             </div>
@@ -306,6 +234,115 @@ class Layoute
             </div>
         </div>
     </footer>
+
+  <?php
+  }
+
+  function sections() {?>
+
+    <section id="portfolio">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-12 text-center">
+                 <h2>Portafolio</h2>
+                 <hr class="star-primary">
+             </div>
+         </div>
+
+         <div class="row">
+         <?php
+
+           //instancia de la app
+           $app = new \Core\App;
+
+           //lanzamos la app
+           $app->render();
+
+          ?>
+        </div>
+     </div>
+ </section>
+
+ <!-- About Section -->
+ <section class="success" id="about">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-12 text-center">
+                 <h2>Acerca de mi</h2>
+                 <hr class="star-light">
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-lg-4 col-lg-offset-2">
+                 <p>Desarrollador de app web, con 3 años de experiencia en el campo, apacionado por lo que hago,
+                    ademas del futbol y la investigacion de nuevas tecnologias</p>
+             </div>
+             <div class="col-lg-4">
+                 <p>Experiencia en desarrolo de aplicaciones Pos y ERP, ademas de software altamente transaccional, casado y disfrutando de la vida apesar de todo</p>
+             </div>
+             <!-- <div class="col-lg-8 col-lg-offset-2 text-center">
+                 <a href="#" class="btn btn-lg btn-outline">
+                     <i class="fa fa-download"></i> Download Theme
+                 </a>
+             </div> -->
+         </div>
+     </div>
+ </section>
+
+ <!-- Contact Section -->
+ <section id="contact">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-12 text-center">
+                 <h2>Contactame</h2>
+                 <hr class="star-primary">
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-lg-8 col-lg-offset-2">
+                 <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                 <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                 <form name="sentMessage" id="contactForm" novalidate>
+                     <div class="row control-group">
+                         <div class="form-group col-xs-12 floating-label-form-group controls">
+                             <label>Nombre</label>
+                             <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Please enter your name.">
+                             <p class="help-block text-danger"></p>
+                         </div>
+                     </div>
+                     <div class="row control-group">
+                         <div class="form-group col-xs-12 floating-label-form-group controls">
+                             <label>Email</label>
+                             <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email address.">
+                             <p class="help-block text-danger"></p>
+                         </div>
+                     </div>
+                     <div class="row control-group">
+                         <div class="form-group col-xs-12 floating-label-form-group controls">
+                             <label>Numero de Telefono</label>
+                             <input type="tel" class="form-control" placeholder="Telefono" id="phone" required data-validation-required-message="Please enter your phone number.">
+                             <p class="help-block text-danger"></p>
+                         </div>
+                     </div>
+                     <div class="row control-group">
+                         <div class="form-group col-xs-12 floating-label-form-group controls">
+                             <label>Mensaje</label>
+                             <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                             <p class="help-block text-danger"></p>
+                         </div>
+                     </div>
+                     <br>
+                     <div id="success"></div>
+                     <div class="row">
+                         <div class="form-group col-xs-12">
+                             <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+                         </div>
+                     </div>
+                 </form>
+             </div>
+         </div>
+     </div>
+ </section>
 
   <?php
   }
